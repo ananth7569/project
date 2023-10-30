@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Project</title>
+    <style>
+        header{
+    background-attachment: fixed;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-title a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    margin-left:20px;
+}
+
+.navigation {
+    margin-right: 20px;
+}
+
+.navigation a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+}
+
+.menu-button {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 4px;
+    background-color: #ffffff;
+}
+
+.menu-box {
+    display: none;
+    width: 200px;
+    height: 750px;
+    margin-left: 0;
+    background-color: #ffffff;
+    border: 1px solid #333;
+    padding: 10px;
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    border-radius: 10px;
+    animation: slide-in 0.5s ;
+   
+
+}
+.menu-box.active {
+    animation: slide-out 0.5s  ;
+}
+
+@keyframes slide-in {
+    from {
+        left: 200px;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@keyframes slide-out {
+    from {
+        left: 0;
+    }
+    to {
+        left: 200px;
+    }
+}
+li{
+    font-size: 20px;
+    color: #000;
+    
+}
+
+a{
+    color: #000;
+    text-decoration: none;
+}
+</style>
+</head>
+<body>
+    <header>
+       
+    
+    <div class="menu-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+    <div class="menu-box" id="menu-box">
+        <ul>
+            <li><a href="index.html">Project</a></li>
+            <li><a href="#">someting</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </div>
+    <div class="project-title"><a href="index.html">Your Project</a></div>
+    <div class="navigation">
+        <a href="about.html">About</a>
+        <a href="support.html">Support</a>
+    </div>
+    
+</header>
+<script>
+const menuButton = document.getElementById("menu-button");
+const menuBox = document.getElementById("menu-box");
+
+menuButton.addEventListener("click", () => {
+    if (menuBox.style.display === "block") {
+        menuBox.style.display = "none";
+    } else {
+        menuBox.style.display = "block";
+    }
+});
+
+</script>
+    
+</body>
+</html>
